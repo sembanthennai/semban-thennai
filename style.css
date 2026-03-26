@@ -192,4 +192,51 @@ footer {
   .hero {
     min-height: 60vh;
   }
+}  
+.cart-icon {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: #1b4332;
+  color: white;
+  padding: 12px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.cart-panel {
+  position: fixed;
+  right: -320px;
+  top: 0;
+  width: 300px;
+  height: 100%;
+  background: #fff;
+  padding: 20px;
+  transition: 0.3s;
+  box-shadow: -5px 0 20px rgba(0,0,0,0.1);
+  z-index: 1000;
+}
+
+.cart-panel.open {
+  right: 0;
+}
+
+.cart-panel ul {
+  list-style: none;
+  padding: 0;
+}
+
+.cart-panel li {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 8px;
+}
+
+.qty-box button {
+  margin: 0 3px;
+  padding: 3px 8px;
+  cursor: pointer;
 }
