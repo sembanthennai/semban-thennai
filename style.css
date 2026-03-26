@@ -1,22 +1,81 @@
 body {
   font-family: 'Inter', sans-serif;
+  margin: 0;
 }
 
-/* PRODUCTS */
+/* CONTAINER */
 .container {
+  max-width: 1100px;
+  margin: auto;
   padding: 20px;
+}
+
+/* TOP BAR */
+.top-bar {
+  background: #1b4332;
+  color: white;
+  padding: 8px;
+}
+
+/* NAVBAR */
+.nav-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-menu {
+  display: flex;
+  list-style: none;
+  gap: 15px;
+}
+
+/* HERO */
+.hero {
+  height: 80vh;
+  background: url('https://images.unsplash.com/photo-1596434449293-68f7b539ef38?q=80&w=2000') center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
 }
 
+.hero-overlay {
+  color: white;
+}
+
+/* BUTTON */
+.btn-main {
+  background: #1b4332;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  text-decoration: none;
+}
+
+/* ABOUT */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.stat-box {
+  background: #eee;
+  padding: 10px;
+  margin: 10px;
+}
+
+/* PRODUCTS */
 .product-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
   gap: 20px;
 }
 
 .product-card {
-  padding: 20px;
   border: 1px solid #ddd;
+  padding: 20px;
+  text-align: center;
 }
 
 .product-card img {
@@ -25,43 +84,50 @@ body {
   object-fit: cover;
 }
 
-/* BUTTON */
-.btn-main {
-  background: green;
-  color: white;
-  padding: 10px;
-  border: none;
-  margin-top: 10px;
-}
-
-/* CART ICON */
+/* CART */
 .cart-icon {
   position: fixed;
   top: 20px;
   right: 20px;
-  background: black;
+  background: #1b4332;
   color: white;
   padding: 10px;
-  cursor: pointer;
   border-radius: 50%;
+  cursor: pointer;
 }
 
-/* CART PANEL */
 .cart-panel {
   position: fixed;
-  right: 0;
-  top: 60px;
-  width: 250px;
+  right: -300px;
+  top: 0;
+  width: 280px;
+  height: 100%;
   background: white;
-  border: 1px solid #ddd;
-  padding: 10px;
-  display: none;
+  padding: 20px;
+  transition: 0.3s;
 }
 
-.cart-panel ul {
-  list-style: none;
+.cart-panel.open {
+  right: 0;
 }
 
 .cart-panel li {
+  display: flex;
+  justify-content: space-between;
   margin-bottom: 10px;
+}
+
+/* FOOTER */
+footer {
+  background: #1b4332;
+  color: white;
+  text-align: center;
+  padding: 15px;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
 }
