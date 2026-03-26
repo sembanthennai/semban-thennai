@@ -6,12 +6,14 @@
 <title>Semban Thennai</title>
 
 <link rel="stylesheet" href="style.css">
-<link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
 
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
-<!-- FLOATING CART -->
+<!-- CART ICON -->
 <div class="cart-icon" onclick="toggleCart()">
 🛒 <span id="cart-count">0</span>
 </div>
@@ -23,8 +25,71 @@
 <button onclick="sendToWhatsApp()" class="btn-main">Order via WhatsApp</button>
 </div>
 
+<!-- TOP BAR -->
+<div class="top-bar">
+<div class="container top-bar-flex">
+<div class="top-left">
+<a href="mailto:sembanthennai@gmail.com">
+<i class="far fa-envelope"></i> sembanthennai@gmail.com
+</a>
+</div>
+<div class="top-right">
+<a href="https://wa.me/919842817277" target="_blank">
+<i class="fab fa-whatsapp"></i> Chat to Order
+</a>
+</div>
+</div>
+</div>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+<div class="container nav-row">
+<img src="logo.png" class="nav-logo">
+
+<ul class="nav-menu">
+<li><a href="#about">About</a></li>
+<li><a href="#products">Products</a></li>
+<li><a href="#location">Location</a></li>
+</ul>
+</div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+<div class="hero-overlay">
+<span class="badge">TRADITIONALLY GROWN</span>
+<h1>Pure. Natural. Rooted.</h1>
+<p>Experience the essence of Semban Thennai</p>
+<a href="#products" class="btn-main">View Products</a>
+</div>
+</header>
+
+<!-- ABOUT -->
+<section id="about" class="container section">
+<div class="about-grid">
+
+<div>
+<h2>Our Story</h2>
+<p>
+Semban Thennai is rooted in tradition and built on a commitment to quality.
+Our coconut groves are cultivated using natural farming practices.
+</p>
+<p>
+We provide pure coconut products and healthy saplings directly from our farm.
+</p>
+</div>
+
+<div>
+<div class="stat-box">100% Natural</div>
+<div class="stat-box">Farm Direct</div>
+</div>
+
+</div>
+</section>
+
 <!-- PRODUCTS -->
-<section class="container">
+<section id="products" class="section">
+<div class="container">
 <h2>Our Products</h2>
 
 <div class="product-grid">
@@ -32,52 +97,51 @@
 <div class="product-card">
 <img src="oil.jpg">
 <h3>Coconut Oil</h3>
-<button onclick="addToCart('Coconut Oil')" class="btn-main">Add</button>
+<button onclick="addToCart('Coconut Oil')" class="btn-main">Add to Cart</button>
 </div>
 
 <div class="product-card">
 <img src="saplings.jpg">
 <h3>Saplings</h3>
-<button onclick="addToCart('Saplings')" class="btn-main">Add</button>
+<button onclick="addToCart('Saplings')" class="btn-main">Add to Cart</button>
 </div>
 
 <div class="product-card">
 <img src="coconut.jpg">
 <h3>Fresh Coconuts</h3>
-<button onclick="addToCart('Fresh Coconuts')" class="btn-main">Add</button>
+<button onclick="addToCart('Fresh Coconuts')" class="btn-main">Add to Cart</button>
 </div>
 
+</div>
 </div>
 </section>
 
+<!-- LOCATION -->
+<section id="location" class="container section">
+<div class="location-card">
+<h3>Visit Our Farm</h3>
+<p>Semban Thennai<br>Barur, Tamil Nadu</p>
+
+<a href="https://maps.app.goo.gl/BN6YttXz6fx7xy7L7" target="_blank" class="btn-main">
+Get Directions
+</a>
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+<p>© 2026 Semban Thennai</p>
+</footer>
+
+<!-- SCRIPT -->
 <script>
 
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-function addToCart(item) {
-    let existing = cart.find(i => i.name === item);
-
-    if (existing) {
-        existing.qty++;
-    } else {
-        cart.push({ name: item, qty: 1 });
+function addToCart(name) {
+    if (!cart.includes(name)) {
+        cart.push(name);
     }
-
-    saveCart();
-}
-
-function removeItem(index) {
-    cart.splice(index, 1);
-    saveCart();
-}
-
-function changeQty(index, change) {
-    cart[index].qty += change;
-
-    if (cart[index].qty <= 0) {
-        removeItem(index);
-    }
-
     saveCart();
 }
 
@@ -91,32 +155,31 @@ function displayCart() {
     let count = document.getElementById("cart-count");
 
     list.innerHTML = "";
-    count.innerText = cart.length;
 
     cart.forEach((item, index) => {
         let li = document.createElement("li");
 
         li.innerHTML = `
-        ${item.name}
-        <div>
-            <button onclick="changeQty(${index}, -1)">-</button>
-            ${item.qty}
-            <button onclick="changeQty(${index}, 1)">+</button>
-            <button onclick="removeItem(${index})">❌</button>
-        </div>
+        ${item}
+        <button onclick="removeItem(${index})">❌</button>
         `;
 
         list.appendChild(li);
     });
+
+    count.innerText = cart.length;
+}
+
+function removeItem(index) {
+    cart.splice(index, 1);
+    saveCart();
 }
 
 function toggleCart() {
-    let panel = document.getElementById("cart-panel");
-    panel.style.display = panel.style.display === "block" ? "none" : "block";
+    document.getElementById("cart-panel").classList.toggle("open");
 }
 
 function sendToWhatsApp() {
-
     if (cart.length === 0) {
         alert("Cart is empty");
         return;
@@ -124,13 +187,11 @@ function sendToWhatsApp() {
 
     let message = "Hello, I want to order:\n";
 
-    // ONLY ITEM NAMES (no quantity)
     cart.forEach(item => {
-        message += "- " + item.name + "\n";
+        message += "- " + item + "\n";
     });
 
-    let url = "https://wa.me/919842717277?text=" + encodeURIComponent(message);
-    window.open(url, "_blank");
+    window.open("https://wa.me/919842817277?text=" + encodeURIComponent(message));
 }
 
 displayCart();
