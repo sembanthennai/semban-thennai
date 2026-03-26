@@ -6,66 +6,90 @@
   <title>Semban Thennai</title>
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
 <header>
-  <h1>Semban Thennai</h1>
+  <div class="logo">🌴 Semban Thennai</div>
   <nav>
     <a href="#">Home</a>
     <a href="#products">Products</a>
-    <a href="#about">About</a>
+    <a href="#gallery">Gallery</a>
     <a href="#contact">Contact</a>
   </nav>
 </header>
 
 <section class="hero">
-  <h2>Fresh Coconut Products</h2>
-  <p>From Farm to Your Home</p>
-  <a href="https://wa.me/919842817277" class="btn">Order on WhatsApp</a>
+  <div>
+    <h1>Fresh Coconut Products Direct From Farm</h1>
+    <p>Natural • Pure • Trusted</p>
+    <a href="https://wa.me/919842817277" class="btn">Order Now</a>
+  </div>
 </section>
 
 <section id="products" class="section">
   <h2>Our Products</h2>
-  <div class="products">
+
+  <div class="grid">
 
     <div class="card">
+      <img src="coconut.jpg">
       <h3>Coconuts</h3>
-      <p>Fresh coconuts</p>
+      <p>Fresh harvested coconuts</p>
       <button onclick="order('Coconuts')">Order</button>
     </div>
 
     <div class="card">
+      <img src="oil.jpg">
       <h3>Coconut Oil</h3>
-      <p>Pure oil</p>
+      <p>Pure cold pressed oil</p>
       <button onclick="order('Coconut Oil')">Order</button>
     </div>
 
     <div class="card">
+      <img src="saplings.jpg">
       <h3>Saplings</h3>
-      <p>Healthy plants</p>
+      <p>Healthy coconut plants</p>
       <button onclick="order('Saplings')">Order</button>
     </div>
 
   </div>
 </section>
 
-<section id="about" class="section">
-  <h2>About Us</h2>
-  <p>We provide fresh coconuts, coconut oil and saplings directly from our farm.</p>
+<section id="gallery" class="section">
+  <h2>Our Farm</h2>
+
+  <div class="gallery">
+    <img src="farm1.jpg">
+    <img src="farm2.jpg">
+    <img src="farm3.jpg">
+    <img src="farm4.jpg">
+  </div>
 </section>
 
-<section id="contact" class="section">
+<section class="section">
+  <h2>Why Choose Us</h2>
+  <div class="grid">
+    <div class="card">🌱 100% Natural Farming</div>
+    <div class="card">🚜 Direct From Farm</div>
+    <div class="card">⭐ Trusted Quality</div>
+  </div>
+</section>
+
+<section id="contact" class="section contact">
   <h2>Contact</h2>
-  <p>Phone: 9842817277</p>
-  <p>Instagram: semban_thennai</p>
+  <p>📞 9842817277</p>
+  <p>📸 semban_thennai</p>
 </section>
 
 <footer>
   <p>© 2026 Semban Thennai</p>
 </footer>
 
+<a href="https://wa.me/919842817277" class="whatsapp">💬</a>
+
 <script>
-function order(product) {
+function order(product){
   window.open(`https://wa.me/919842817277?text=I want to order ${product}`);
 }
 </script>
