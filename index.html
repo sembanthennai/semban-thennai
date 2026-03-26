@@ -1,148 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Semban Thennai</title>
-<link rel="stylesheet" href="style.css">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Semban Thennai | Premium Cold-Pressed Coconut Oil</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
-
 <body>
 
-<div id="loader">🌴 Loading...</div>
+    <a href="https://wa.me/91XXXXXXXXXX" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+        <span class="tooltip">Order on WhatsApp</span>
+    </a>
 
-<header class="header">
-  <div class="logo">🌴 Semban Thennai</div>
-  <nav>
-    <a href="#">Home</a>
-    <a href="#products">Products</a>
-    <a href="#gallery">Farm</a>
-    <a href="#contact">Contact</a>
-  </nav>
-</header>
+    <nav class="navbar">
+        <div class="container nav-flex">
+            <div class="logo-container">
+                <img src="logo.png" alt="Semban Thennai" class="logo">
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#about">Our Story</a></li>
+                <li><a href="https://instagram.com/semban_thennai" class="insta-btn" target="_blank"><i class="fab fa-instagram"></i> Instagram</a></li>
+            </ul>
+        </div>
+    </nav>
 
-<section class="hero">
-  <div class="overlay"></div>
-  <div class="hero-content">
-    <h1>Pure Coconut. Premium Quality.</h1>
-    <p>Direct from our farm to your home</p>
-    <a href="https://wa.me/919842817277" class="btn">Order on WhatsApp</a>
-  </div>
-</section>
+    <header id="home" class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <span class="badge">TRADITIONALLY CRAFTED</span>
+            <h1>Pure. Cold-Pressed. <br><span class="highlight">Unrefined.</span></h1>
+            <p>Bringing the authentic taste and health benefits of Tamil Nadu's finest coconut groves directly to your kitchen.</p>
+            <div class="hero-btns">
+                <a href="#products" class="btn primary-btn">View Products</a>
+                <a href="https://wa.me/91XXXXXXXXXX" class="btn secondary-btn">Inquire Now</a>
+            </div>
+        </div>
+    </header>
 
-<section id="products" class="section reveal">
-  <h2>Our Products</h2>
-  <div class="grid">
+    <section class="trust-bar">
+        <div class="container trust-grid">
+            <div class="trust-item"><i class="fas fa-leaf"></i> 100% Organic</div>
+            <div class="trust-item"><i class="fas fa-tint"></i> Wood Pressed</div>
+            <div class="trust-item"><i class="fas fa-vial-slash"></i> No Preservatives</div>
+            <div class="trust-item"><i class="fas fa-shuttle-van"></i> Direct Shipping</div>
+        </div>
+    </section>
 
-    <div class="card glass">
-      <img src="coconut.jpg">
-      <h3>Coconuts</h3>
-      <p>Freshly harvested premium coconuts</p>
-      <button onclick="order('Coconuts')">Order Now</button>
-    </div>
+    <section id="products" class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="sub-title">Natural Wellness</span>
+                <h2>Our Premium Range</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="product-grid">
+                <div class="product-card">
+                    <div class="product-img-placeholder">
+                        <i class="fas fa-bottle-droplet"></i>
+                        <p>Cold Pressed Oil</p>
+                    </div>
+                    <div class="product-info">
+                        <h3>Extra Virgin Coconut Oil</h3>
+                        <p>Slow-extracted using traditional methods to keep nutrients intact.</p>
+                        <div class="price-row">
+                            <span class="price">₹250.00 / 500ml</span>
+                            <a href="https://wa.me/91XXXXXXXXXX?text=I'm%20interested%20in%20Coconut%20Oil" class="cart-btn">Order</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img-placeholder">
+                        <i class="fas fa-seedling"></i>
+                        <p>Natural Copra</p>
+                    </div>
+                    <div class="product-info">
+                        <h3>Sun-Dried Copra</h3>
+                        <p>Hand-picked coconuts, sun-dried naturally for the highest oil content.</p>
+                        <div class="price-row">
+                            <span class="price">Market Rate</span>
+                            <a href="https://wa.me/91XXXXXXXXXX?text=I'm%20interested%20in%20Copra" class="cart-btn">Order</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <div class="card glass">
-      <img src="oil.jpg">
-      <h3>Coconut Oil</h3>
-      <p>Pure cold-pressed traditional oil</p>
-      <button onclick="order('Coconut Oil')">Order Now</button>
-    </div>
-
-    <div class="card glass">
-      <img src="saplings.jpg">
-      <h3>Saplings</h3>
-      <p>High-quality coconut plants</p>
-      <button onclick="order('Saplings')">Order Now</button>
-    </div>
-
-  </div>
-</section>
-
-<section class="parallax">
-  <h2>From Our Farm to You</h2>
-</section>
-
-<section id="gallery" class="section dark reveal">
-  <h2>Our Farm</h2>
-  <div class="gallery">
-    <img src="farm1.jpg">
-    <img src="farm2.jpg">
-    <img src="farm3.jpg">
-    <img src="farm4.jpg">
-  </div>
-</section>
-
-<section class="section reveal">
-  <h2>Our Impact</h2>
-  <div class="grid">
-    <div class="counter" data-target="5000">0<br><span>Coconuts Sold</span></div>
-    <div class="counter" data-target="1200">0<br><span>Happy Customers</span></div>
-    <div class="counter" data-target="10">0<br><span>Years Experience</span></div>
-  </div>
-</section>
-
-<section class="section reveal">
-  <h2>Why Choose Us</h2>
-  <div class="grid">
-    <div class="card feature">🌱 Natural Farming</div>
-    <div class="card feature">🚜 Direct Supply</div>
-    <div class="card feature">⭐ Premium Quality</div>
-  </div>
-</section>
-
-<section id="contact" class="section contact reveal">
-  <h2>Contact</h2>
-  <p>📞 9842817277</p>
-  <p>
-    📸 <a href="https://instagram.com/semban_thennai" target="_blank" class="insta">semban_thennai</a>
-  </p>
-</section>
-
-<footer>
-  <p>© 2026 Semban Thennai</p>
-</footer>
-
-<a href="https://wa.me/919842817277" class="whatsapp">💬</a>
-
-<script>
-function order(product){
-  window.open(`https://wa.me/919842817277?text=I want to order ${product}`);
-}
-
-// loader
-window.addEventListener("load", ()=>{
-  document.getElementById("loader").style.display="none";
-});
-
-// reveal animation
-const reveals = document.querySelectorAll('.reveal');
-window.addEventListener('scroll', () => {
-  reveals.forEach(el => {
-    const top = el.getBoundingClientRect().top;
-    if(top < window.innerHeight - 100){
-      el.classList.add('active');
-    }
-  });
-});
-
-// counters
-const counters = document.querySelectorAll('.counter');
-counters.forEach(counter => {
-  const update = () => {
-    const target = +counter.getAttribute('data-target');
-    const count = +counter.innerText;
-    const inc = target / 100;
-    if(count < target){
-      counter.innerText = Math.ceil(count + inc);
-      setTimeout(update, 20);
-    } else {
-      counter.innerText = target;
-    }
-  };
-  update();
-});
-</script>
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <img src="logo.png" alt="Logo" class="footer-logo">
+                    <p>Reviving the age-old tradition of pure oils. Healthy living starts with what you consume.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#products">Products</a></li>
+                        <li><a href="https://instagram.com/semban_thennai">Instagram</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Visit Us</h4>
+                    <p>Tamil Nadu, India</p>
+                    <p>Email: contact@sembanthennai.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Semban Thennai. Purely Authentic.</p>
+            </div>
+        </div>
+    </footer>
 
 </body>
 </html>
