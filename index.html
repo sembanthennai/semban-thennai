@@ -4,67 +4,196 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>THE ESTATE | Premium Coconut Provenance</title>
-    <link rel="stylesheet" href="style.css">
+    
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg: #ffffff;
+            --text: #0a0a0a;
+            --sub: #707070;
+            --gutter: 7vw;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* NAVIGATION: Fixed & Floating */
+        nav {
+            position: fixed;
+            top: 0; width: 100%;
+            padding: 2.5rem var(--gutter);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            background: rgba(255,255,255,0.8);
+            backdrop-filter: blur(10px);
+        }
+
+        .logo { font-weight: 600; letter-spacing: 2px; text-transform: uppercase; font-size: 0.9rem; }
+        .nav-links a { 
+            text-decoration: none; color: var(--text); font-size: 0.7rem; 
+            text-transform: uppercase; letter-spacing: 0.15em; margin-left: 2.5vw; 
+            opacity: 0.6; transition: 0.3s;
+        }
+        .nav-links a:hover { opacity: 1; }
+
+        /* HERO: High Contrast Typography */
+        header {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 0 var(--gutter);
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .hero-label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.5em; color: var(--sub); margin-bottom: 2rem; }
+        
+        h1 {
+            font-size: clamp(3rem, 10vw, 8rem);
+            font-weight: 400;
+            line-height: 0.85;
+            letter-spacing: -0.05em;
+            margin-bottom: 3rem;
+        }
+
+        .hero-sub {
+            max-width: 450px;
+            font-size: 1.1rem;
+            color: var(--sub);
+            font-weight: 300;
+        }
+
+        /* SECTIONS: The 12-Column Estate Grid */
+        .section {
+            padding: 10rem var(--gutter);
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            align-items: center;
+            gap: 4rem;
+        }
+
+        .product-image {
+            grid-column: 1 / 8;
+            height: 80vh;
+            overflow: hidden;
+            background: #f7f7f7;
+        }
+
+        .product-image img {
+            width: 100%; height: 100%; object-fit: cover;
+            transition: transform 1.5s ease;
+        }
+
+        .product-image:hover img { transform: scale(1.05); }
+
+        .product-info { grid-column: 9 / 13; }
+
+        .product-num { font-size: 0.6rem; letter-spacing: 0.3em; color: var(--sub); text-transform: uppercase; margin-bottom: 2rem; display: block; }
+        
+        h2 { font-size: clamp(2rem, 4vw, 3.5rem); font-weight: 400; letter-spacing: -0.02em; margin-bottom: 1.5rem; line-height: 1.1; }
+
+        .product-desc { font-size: 1rem; color: var(--sub); margin-bottom: 3rem; }
+
+        /* REVERSE GRID */
+        .section.alt .product-image { grid-column: 6 / 13; }
+        .section.alt .product-info { grid-column: 1 / 5; grid-row: 1; }
+
+        /* BUTTONS: Minimalist Underline */
+        .cta-link {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            text-decoration: none;
+            color: var(--text);
+            border-bottom: 1px solid var(--text);
+            padding-bottom: 8px;
+            transition: all 0.3s;
+        }
+        .cta-link:hover { padding-right: 15px; background: #fafafa; }
+
+        /* FOOTER */
+        footer {
+            padding: 8rem var(--gutter);
+            background: #0a0a0a;
+            color: white;
+            text-align: center;
+        }
+
+        .footer-logo { font-size: 1.5rem; letter-spacing: 0.5em; opacity: 0.3; margin-bottom: 4rem; }
+        
+        .whatsapp-footer {
+            font-size: clamp(1.5rem, 5vw, 3rem);
+            color: white;
+            text-decoration: none;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+            padding-bottom: 10px;
+        }
+
+        /* MOBILE OPTIMIZATION */
+        @media (max-width: 900px) {
+            .section, .section.alt { display: flex; flex-direction: column; padding: 5rem var(--gutter); }
+            .product-image { width: 100%; height: 50vh; }
+            .nav-links { display: none; }
+            h1 { font-size: 4rem; }
+        }
+    </style>
 </head>
 <body>
 
     <nav>
-        <div class="logo">YOUR BRAND LOGO</div>
+        <div class="logo">THE ESTATE</div>
         <div class="nav-links">
             <a href="#harvest">The Harvest</a>
             <a href="#essence">The Essence</a>
             <a href="#nursery">The Nursery</a>
-            <a href="https://instagram.com/YourInstaID" target="_blank">@YourInstaID</a>
+            <a href="https://instagram.com/YourID">@INSTAGRAM</a>
         </div>
     </nav>
 
     <header>
-        <div class="hero-label">The Estate</div>
-        <h1>Pure Provenance.</h1>
-        <p class="hero-sub">Sustainable agriculture. Exceptional yields. Established 2024. Crafted for those who demand uncompromising quality.</p>
+        <p class="hero-label">Agricultural Excellence</p>
+        <h1>Pure<br>Provenance.</h1>
+        <p class="hero-sub">Sustainable harvesting. Small-batch integrity. Direct distribution from our private groves.</p>
     </header>
 
     <section class="section" id="harvest">
-        <div class="product-info">
-            <div class="product-num">01 / THE FRUIT</div>
-            <h2>Fresh Coconuts</h2>
-            <p class="product-desc">Hand-selected at peak maturity. Freshness defined, delivered directly from the source.</p>
-            <a href="https://wa.me/YOURNUMBER?text=Inquiry: Fresh Coconuts" class="cta-button">Coordinate Logistics</a>
-        </div>
         <div class="product-image">
-             <img src="https://images.unsplash.com/photo-1558449028-b53a39d100fc?auto=format&fit=crop&q=80&w=1000" alt="Coconut Harvest">
+             <img src="https://images.unsplash.com/photo-1558449028-b53a39d100fc?q=80&w=2000" alt="Coconuts">
+        </div>
+        <div class="product-info">
+            <span class="product-num">Inquiry 01</span>
+            <h2>Fresh<br>Coconuts</h2>
+            <p class="product-desc">Hand-selected at peak maturity. Available for bulk logistics and private distribution.</p>
+            <a href="https://wa.me/YOUR_NUMBER" class="cta-link">Request Quote ↗</a>
         </div>
     </section>
 
-    <section class="section reverse" id="essence">
-        <div class="product-info">
-            <div class="product-num">02 / THE ESSENCE</div>
-            <h2>Cold-Pressed Oil</h2>
-            <p class="product-desc">Single-origin extraction. 100% Pure. Small-batch integrity preserved through traditional cold-press methods.</p>
-            <a href="https://wa.me/YOURNUMBER?text=Inquiry: Coconut Oil" class="cta-button">Request Specifications</a>
-        </div>
+    <section class="section alt" id="essence">
         <div class="product-image">
-             <img src="https://images.unsplash.com/photo-1620189503995-03039712312a?auto=format&fit=crop&q=80&w=1000" alt="Coconut Oil">
+             <img src="https://images.unsplash.com/photo-1620189503995-03039712312a?q=80&w=2000" alt="Oil">
         </div>
-    </section>
-
-    <section class="section" id="nursery">
         <div class="product-info">
-            <div class="product-num">03 / THE LINEAGE</div>
-            <h2>Hybrid Saplings</h2>
-            <p class="product-desc">Genetically superior high-yield saplings. Cultivated in our nursery to ensure the longevity of your future plantation.</p>
-            <a href="https://wa.me/YOURNUMBER?text=Inquiry: Saplings" class="cta-button">Consult Agronomist</a>
-        </div>
-        <div class="product-image">
-             <img src="https://images.unsplash.com/photo-1599423300746-b625333973d4?auto=format&fit=crop&q=80&w=1000" alt="Coconut Sapling">
+            <span class="product-num">Inquiry 02</span>
+            <h2>Cold-Pressed<br>Oil</h2>
+            <p class="product-desc">Single-origin extraction. Decanted in small batches to ensure molecular purity.</p>
+            <a href="https://wa.me/YOUR_NUMBER" class="cta-link">Request Specs ↗</a>
         </div>
     </section>
 
     <footer>
-        <div class="footer-logo">YOUR BRAND LOGO</div>
-        <p class="footer-note">Pricing is provided upon private request through our Estate Concierge to ensure seasonal accuracy.</p>
-        <a href="https://wa.me/YOURNUMBER" class="cta-button inverse">Start Private Consultation</a>
+        <div class="footer-logo">THE ESTATE</div>
+        <p style="opacity: 0.5; margin-bottom: 2rem;">Private Inquiries</p>
+        <a href="https://wa.me/YOUR_NUMBER" class="whatsapp-footer">WhatsApp Concierge ↗</a>
     </footer>
 
 </body>
