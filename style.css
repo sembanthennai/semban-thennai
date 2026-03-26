@@ -3,79 +3,30 @@ body {
   margin: 0;
 }
 
-/* CONTAINER */
-.container {
-  max-width: 1100px;
-  margin: auto;
-  padding: 20px;
-}
-
-/* TOP BAR */
-.top-bar {
-  background: #1b4332;
-  color: white;
-  padding: 8px;
-}
-
-/* NAVBAR */
-.nav-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.nav-menu {
-  display: flex;
-  list-style: none;
-  gap: 15px;
-}
-
 /* HERO */
 .hero {
-  height: 80vh;
-  background: url('https://images.unsplash.com/photo-1596434449293-68f7b539ef38?q=80&w=2000') center/cover;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-}
-
-.hero-overlay {
-  color: white;
-}
-
-/* BUTTON */
-.btn-main {
   background: #1b4332;
   color: white;
-  padding: 10px 20px;
-  border: none;
-  text-decoration: none;
+  text-align: center;
+  padding: 80px 20px;
 }
 
-/* ABOUT */
-.about-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-}
-
-.stat-box {
-  background: #eee;
-  padding: 10px;
-  margin: 10px;
+/* SECTION */
+.section {
+  padding: 40px;
+  text-align: center;
 }
 
 /* PRODUCTS */
 .product-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+  grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
   gap: 20px;
 }
 
 .product-card {
   border: 1px solid #ddd;
   padding: 20px;
-  text-align: center;
 }
 
 .product-card img {
@@ -89,7 +40,7 @@ body {
   position: fixed;
   top: 20px;
   right: 20px;
-  background: #1b4332;
+  background: black;
   color: white;
   padding: 10px;
   border-radius: 50%;
@@ -98,9 +49,9 @@ body {
 
 .cart-panel {
   position: fixed;
-  right: -300px;
+  right: -250px;
   top: 0;
-  width: 280px;
+  width: 250px;
   height: 100%;
   background: white;
   padding: 20px;
@@ -111,23 +62,10 @@ body {
   right: 0;
 }
 
-.cart-panel li {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 10px;
-}
-
 /* FOOTER */
 footer {
   background: #1b4332;
   color: white;
   text-align: center;
-  padding: 15px;
-}
-
-/* MOBILE */
-@media (max-width: 768px) {
-  .about-grid {
-    grid-template-columns: 1fr;
-  }
+  padding: 20px;
 }
