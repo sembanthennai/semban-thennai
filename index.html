@@ -3,130 +3,22 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Semban Thennai Farm</title>
 
+<title>Semban Thennai Farm | Coconut Supplier Tamil Nadu</title>
+
+<meta name="description" content="Buy fresh coconuts, coconut saplings and pure coconut oil directly from farm in Tamil Nadu. Contact for best price.">
+<meta name="keywords" content="coconuts Tamil Nadu, coconut supplier, coconut saplings, coconut oil, farm fresh coconuts">
+<meta name="author" content="Semban Thennai Farm">
+
+<link rel="stylesheet" href="style.css">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-
-<style>
-body {
-    margin: 0;
-    font-family: 'Poppins', sans-serif;
-    background: #f9f9f9;
-}
-
-/* Navbar */
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 40px;
-    background: #2E7D32;
-    color: white;
-}
-
-nav img {
-    height: 50px;
-}
-
-nav a {
-    color: white;
-    text-decoration: none;
-    margin: 0 10px;
-}
-
-/* Hero */
-.hero {
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
-                url('coconuts.jpg') no-repeat center/cover;
-    color: white;
-    text-align: center;
-    padding: 120px 20px;
-}
-
-.hero h1 {
-    font-size: 38px;
-}
-
-.hero button {
-    padding: 12px 20px;
-    margin: 10px;
-    border: none;
-    border-radius: 6px;
-    background: #ffcc00;
-    cursor: pointer;
-}
-
-/* Section */
-.section {
-    padding: 50px 20px;
-    text-align: center;
-}
-
-/* Products */
-.products {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.card {
-    background: white;
-    margin: 15px;
-    padding: 20px;
-    width: 260px;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-}
-
-.card img {
-    width: 100%;
-    border-radius: 10px;
-}
-
-/* About */
-.about {
-    max-width: 800px;
-    margin: auto;
-}
-
-/* Contact */
-.contact a {
-    display: block;
-    margin: 10px;
-    color: #2E7D32;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-/* Footer */
-footer {
-    background: #2E7D32;
-    color: white;
-    padding: 20px;
-    text-align: center;
-}
-
-/* WhatsApp Button */
-.whatsapp {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background: #25D366;
-    color: white;
-    padding: 15px;
-    border-radius: 50%;
-    font-size: 20px;
-    text-decoration: none;
-}
-</style>
-
 </head>
 
 <body>
 
 <!-- Navbar -->
 <nav>
-    <img src="logo.png" alt="Logo">
+    <img src="logo.png">
     <div>
         <a href="#">Home</a>
         <a href="#products">Products</a>
@@ -139,7 +31,7 @@ footer {
 <section class="hero">
     <h1>Fresh Coconuts, Saplings & Pure Coconut Oil</h1>
     <p>Directly from our farm in Tamil Nadu</p>
-    <button onclick="document.getElementById('products').scrollIntoView()">View Products</button>
+    <button onclick="scrollToProducts()">View Products</button>
     <button onclick="callNow()">Call Now</button>
 </section>
 
@@ -150,21 +42,39 @@ footer {
     <div class="products">
 
         <div class="card">
-            <img src="coconuts.jpg">
+            <img src="coconuts.jpg" alt="Fresh coconuts supplier Tamil Nadu">
             <h3>Fresh Coconuts</h3>
-            <p>Farm fresh coconuts. Bulk orders available.</p>
+            <p>Farm fresh coconuts available for bulk and retail supply.</p>
+            <p><b>✔ Contact us for best price</b></p>
+
+            <input type="number" id="coconutQty" placeholder="Enter quantity">
+            <button onclick="orderProduct('Fresh Coconuts', coconutQty.value)">
+                Get Quote / Order
+            </button>
         </div>
 
         <div class="card">
-            <img src="sapling.jpg">
+            <img src="sapling.jpg" alt="Coconut saplings Tamil Nadu">
             <h3>Coconut Saplings</h3>
-            <p>Healthy, high-yield plants for farming.</p>
+            <p>Healthy, high-yield coconut plants suitable for farming.</p>
+            <p><b>✔ Contact us for best price</b></p>
+
+            <input type="number" id="saplingQty" placeholder="Enter quantity">
+            <button onclick="orderProduct('Coconut Saplings', saplingQty.value)">
+                Get Quote / Order
+            </button>
         </div>
 
         <div class="card">
-            <img src="oil.jpg">
+            <img src="oil.jpg" alt="Pure coconut oil Tamil Nadu">
             <h3>Coconut Oil</h3>
-            <p>100% pure traditional cold-pressed oil.</p>
+            <p>Pure traditional coconut oil made from quality coconuts.</p>
+            <p><b>✔ Contact us for best price</b></p>
+
+            <input type="number" id="oilQty" placeholder="Enter quantity (litres)">
+            <button onclick="orderProduct('Coconut Oil', oilQty.value)">
+                Get Quote / Order
+            </button>
         </div>
 
     </div>
@@ -173,13 +83,30 @@ footer {
 <!-- About -->
 <section id="about" class="section">
     <h2>About Us</h2>
-    <div class="about">
-        <p>
-            We are a coconut farming business based in Tamil Nadu. 
-            We supply fresh coconuts, quality saplings, and pure coconut oil directly from our farm. 
-            We focus on quality, trust, and fair pricing.
-        </p>
-    </div>
+    <p>
+        We are a coconut farming business based in Tamil Nadu.
+        We supply fresh coconuts, quality saplings, and pure coconut oil directly from our farm.
+        We serve customers across Erode, Coimbatore, Salem, Krishnagiri, Dharmapuri and nearby areas.
+    </p>
+</section>
+
+<!-- Why Choose Us -->
+<section class="section">
+    <h2>Why Choose Us</h2>
+    <p>✔ Direct from farm</p>
+    <p>✔ No middlemen</p>
+    <p>✔ Fresh and quality products</p>
+    <p>✔ Trusted local supplier</p>
+</section>
+
+<!-- Location -->
+<section class="section">
+    <h2>Our Location</h2>
+
+    <iframe 
+    src="https://maps.google.com/maps?q=hSyh29FTTpbwW4Dq7&output=embed"
+    width="100%" height="300" style="border:0;">
+    </iframe>
 </section>
 
 <!-- Contact -->
@@ -188,7 +115,7 @@ footer {
 
     <a href="tel:+919842817277">📞 Call: 9842817277</a>
 
-    <a href="https://wa.me/919842817277?text=Hi%20I%20want%20to%20order%20coconuts" target="_blank">
+    <a href="https://wa.me/919842817277?text=Hi%20I%20want%20to%20order" target="_blank">
         💬 WhatsApp Us
     </a>
 
@@ -197,7 +124,7 @@ footer {
     </a>
 
     <a href="https://instagram.com/semban_thennai" target="_blank">
-        📸 Follow on Instagram (@semban_thennai)
+        📸 Instagram: @semban_thennai
     </a>
 
 </section>
@@ -207,14 +134,30 @@ footer {
     <p>© 2026 Semban Thennai Farm</p>
 </footer>
 
-<!-- WhatsApp Floating Button -->
-<a class="whatsapp" href="https://wa.me/919842817277?text=Hi%20I%20want%20to%20order%20coconuts" target="_blank">
+<!-- WhatsApp Floating -->
+<a class="whatsapp" href="https://wa.me/919842817277?text=Hi%20I%20want%20to%20order" target="_blank">
     💬
 </a>
 
 <script>
+function scrollToProducts() {
+    document.getElementById("products").scrollIntoView({behavior:"smooth"});
+}
+
 function callNow() {
     window.location.href = "tel:+919842817277";
+}
+
+function orderProduct(product, qty) {
+    if (!qty || qty <= 0) {
+        alert("Please enter quantity");
+        return;
+    }
+
+    let message = `Hi, I would like to get a quote for ${qty} ${product}.`;
+    let url = `https://wa.me/919842817277?text=${encodeURIComponent(message)}`;
+
+    window.open(url, '_blank');
 }
 </script>
 
