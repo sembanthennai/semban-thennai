@@ -3,162 +3,229 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Semban Thennai Farm | Coconut Supplier Tamil Nadu</title>
-
-<meta name="description" content="Buy fresh coconuts, coconut saplings and pure coconut oil directly from farm in Tamil Nadu. Contact for best price.">
-<meta name="keywords" content="coconuts Tamil Nadu, coconut supplier, coconut saplings, coconut oil, farm fresh coconuts">
-<meta name="author" content="Semban Thennai Farm">
+<title>Semban Thennai | Premium Coconut Farm</title>
 
 <link rel="stylesheet" href="style.css">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 
 <body>
 
-<!-- Navbar -->
-<nav>
-    <img src="logo.png">
-    <div>
-        <a href="#">Home</a>
-        <a href="#products">Products</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
+<!-- CART ICON -->
+<div class="cart-icon" onclick="toggleCart()">
+<i class="fas fa-shopping-cart"></i>
+<span id="cart-count">0</span>
+</div>
+
+<!-- CART PANEL -->
+<div class="cart-panel" id="cart-panel">
+<h3>Your Cart</h3>
+<ul id="cart-items"></ul>
+<button onclick="sendToWhatsApp()" class="btn-main">Order via WhatsApp</button>
+</div>
+
+<!-- TOP BAR -->
+<div class="top-bar">
+    <div class="container top-bar-flex">
+        <div class="top-left">
+            <a href="mailto:sembanthennai@gmail.com">
+                <i class="far fa-envelope"></i> sembanthennai@gmail.com
+            </a>
+        </div>
+        <div class="top-right">
+            <a href="https://wa.me/919842817277" target="_blank">
+                <i class="fab fa-whatsapp"></i> Chat to Order
+            </a>
+            <a href="https://instagram.com/semban_thennai" target="_blank">
+                <i class="fab fa-instagram"></i> @semban_thennai
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+    <div class="container nav-row">
+        <img src="logo.png" alt="Semban Thennai" class="nav-logo">
+
+        <ul class="nav-menu">
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#products">Our Offerings</a></li>
+            <li><a href="#location">Location</a></li>
+        </ul>
+
+        <a href="https://wa.me/919842817277" class="nav-cta-btn">Order Now</a>
     </div>
 </nav>
 
-<!-- Hero -->
-<section class="hero">
-    <h1>Fresh Coconuts, Saplings & Pure Coconut Oil</h1>
-    <p>Directly from our farm in Tamil Nadu</p>
-    <button onclick="scrollToProducts()">View Products</button>
-    <button onclick="callNow()">Call Now</button>
-</section>
+<!-- HERO -->
+<header class="hero">
+    <div class="hero-overlay">
+        <span class="badge">TRADITIONALLY GROWN</span>
+        <h1>Pure. Natural. Rooted.</h1>
+        <p>Experience the essence of Semban Thennai.</p>
 
-<!-- Products -->
-<section id="products" class="section">
-    <h2>Our Products</h2>
+        <div class="hero-btns">
+            <a href="#products" class="btn-main">View Products</a>
+        </div>
+    </div>
+</header>
 
-    <div class="products">
+<!-- ABOUT -->
+<section id="about" class="container section">
+    <div class="about-grid">
+        <div class="about-text">
+            <span class="sub-title">Our Story</span>
+            <h2>Grown with Care at Semban Thennai</h2>
+            <div class="underline-left"></div>
 
-        <div class="card">
-            <img src="coconuts.jpg" alt="Fresh coconuts supplier Tamil Nadu">
-            <h3>Fresh Coconuts</h3>
-            <p>Farm fresh coconuts available for bulk and retail supply.</p>
-            <p><b>✔ Contact us for best price</b></p>
+ <p>
+Semban Thennai stands for purity, sustainability, and trust. Rooted in the fertile
+lands of Barur, our farm follows traditional agricultural practices combined with
+modern care to ensure the highest quality coconut cultivation.
+</p>
 
-            <input type="number" id="coconutQty" placeholder="Enter quantity">
-            <button onclick="orderProduct('Fresh Coconuts', coconutQty.value)">
-                Get Quote / Order
-            </button>
+<p>
+Our focus is on producing naturally grown coconuts, cold-pressed coconut oil,
+and healthy saplings without the use of harmful chemicals. Every stage of our
+process — from cultivation to harvesting — is handled with attention to quality
+and respect for nature.
+</p>
+
+<p>
+We take pride in delivering farm-fresh products directly to our customers,
+ensuring authenticity, freshness, and long-term trust. At Semban Thennai,
+we are not just growing coconuts — we are nurturing a tradition of excellence.
+</p>
         </div>
 
-        <div class="card">
-            <img src="sapling.jpg" alt="Coconut saplings Tamil Nadu">
-            <h3>Coconut Saplings</h3>
-            <p>Healthy, high-yield coconut plants suitable for farming.</p>
-            <p><b>✔ Contact us for best price</b></p>
-
-            <input type="number" id="saplingQty" placeholder="Enter quantity">
-            <button onclick="orderProduct('Coconut Saplings', saplingQty.value)">
-                Get Quote / Order
-            </button>
+        <div class="about-stats">
+            <div class="stat-box"><h3>100%</h3><p>Natural</p></div>
+            <div class="stat-box"><h3>Farm</h3><p>Direct</p></div>
         </div>
-
-        <div class="card">
-            <img src="oil.jpg" alt="Pure coconut oil Tamil Nadu">
-            <h3>Coconut Oil</h3>
-            <p>Pure traditional coconut oil made from quality coconuts.</p>
-            <p><b>✔ Contact us for best price</b></p>
-
-            <input type="number" id="oilQty" placeholder="Enter quantity (litres)">
-            <button onclick="orderProduct('Coconut Oil', oilQty.value)">
-                Get Quote / Order
-            </button>
-        </div>
-
     </div>
 </section>
 
-<!-- About -->
-<section id="about" class="section">
-    <h2>About Us</h2>
-    <p>
-        We are a coconut farming business based in Tamil Nadu.
-        We supply fresh coconuts, quality saplings, and pure coconut oil directly from our farm.
-        We serve customers across Erode, Coimbatore, Salem and nearby areas.
-    </p>
+<!-- PRODUCTS -->
+<section id="products" class="section bg-light">
+    <div class="container">
+        <div class="section-header">
+            <span class="sub-title">What We Offer</span>
+            <h2>Our Premium Selection</h2>
+            <div class="underline"></div>
+        </div>
+
+        <div class="product-grid">
+
+            <div class="product-card">
+                <img src="oil.jpg" class="product-img">
+                <h3>Coconut Oil</h3>
+                <p>Cold pressed traditional oil.</p>
+                <button onclick="addToCart('Coconut Oil')" class="btn-main">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <img src="saplings.jpg" class="product-img">
+                <h3>Saplings</h3>
+                <p>Healthy coconut saplings.</p>
+                <button onclick="addToCart('Saplings')" class="btn-main">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <img src="coconut.jpg" class="product-img">
+                <h3>Fresh Coconuts</h3>
+                <p>Direct from farm.</p>
+                <button onclick="addToCart('Fresh Coconuts')" class="btn-main">Add to Cart</button>
+            </div>
+
+        </div>
+    </div>
 </section>
 
-<!-- Why Choose Us -->
-<section class="section">
-    <h2>Why Choose Us</h2>
-    <p>✔ Direct from farm</p>
-    <p>✔ No middlemen</p>
-    <p>✔ Fresh and quality products</p>
-    <p>✔ Trusted local supplier</p>
+<!-- LOCATION -->
+<section id="location" class="container section">
+    <div class="location-card">
+        <i class="fas fa-map-marker-alt"></i>
+        <h3>Visit Our Farm</h3>
+        <p><strong>Semban Thennai</strong><br>Barur, Tamil Nadu</p>
+
+        <a href="https://maps.app.goo.gl/BN6YttXz6fx7xy7L7" target="_blank" class="btn-main">
+            Get Directions
+        </a>
+    </div>
 </section>
 
-<!-- Location -->
-<section class="section">
-    <h2>Our Location</h2>
-
-    <iframe 
-    src="https://maps.google.com/maps?q=hSyh29FTTpbwW4Dq7&output=embed"
-    width="100%" height="300" style="border:0;">
-    </iframe>
-</section>
-
-<!-- Contact -->
-<section id="contact" class="section contact">
-    <h2>Contact Us</h2>
-
-    <a href="tel:+919842817277">📞 Call: 9842817277</a>
-
-    <a href="https://wa.me/919842817277?text=Hi%20I%20want%20to%20order" target="_blank">
-        💬 WhatsApp Us
-    </a>
-
-    <a href="https://maps.app.goo.gl/hSyh29FTTpbwW4Dq7" target="_blank">
-        📍 View Location
-    </a>
-
-    <a href="https://instagram.com/semban_thennai" target="_blank">
-        📸 Instagram: @semban_thennai
-    </a>
-
-</section>
-
-<!-- Footer -->
+<!-- FOOTER -->
 <footer>
-    <p>© 2026 Semban Thennai Farm</p>
+    <div class="container">
+        <p class="copyright">© 2026 Semban Thennai</p>
+    </div>
 </footer>
 
-<!-- WhatsApp Floating -->
-<a class="whatsapp" href="https://wa.me/919842817277?text=Hi%20I%20want%20to%20order" target="_blank">
-    💬
-</a>
-
+<!-- SCRIPT -->
 <script>
-function scrollToProducts() {
-    document.getElementById("products").scrollIntoView({behavior:"smooth"});
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+function addToCart(name){
+    let item = cart.find(i => i.name === name);
+    if(item){ item.qty++; }
+    else{ cart.push({name, qty:1}); }
+    saveCart();
 }
 
-function callNow() {
-    window.location.href = "tel:+919842817277";
+function changeQty(i,val){
+    cart[i].qty += val;
+    if(cart[i].qty <= 0) cart.splice(i,1);
+    saveCart();
 }
 
-function orderProduct(product, qty) {
-    if (!qty || qty <= 0) {
-        alert("Please enter quantity");
-        return;
-    }
-
-    let message = `Hi, I would like to get a quote for ${qty} ${product}.`;
-    let url = `https://wa.me/919842817277?text=${encodeURIComponent(message)}`;
-
-    window.open(url, '_blank');
+function removeItem(i){
+    cart.splice(i,1);
+    saveCart();
 }
+
+function saveCart(){
+    localStorage.setItem("cart", JSON.stringify(cart));
+    displayCart();
+}
+
+function displayCart(){
+    let list = document.getElementById("cart-items");
+    let count = document.getElementById("cart-count");
+
+    list.innerHTML="";
+    cart.forEach((item,i)=>{
+        list.innerHTML += `
+        <li>
+            ${item.name}
+            <div>
+                <button onclick="changeQty(${i},-1)">-</button>
+                ${item.qty}
+                <button onclick="changeQty(${i},1)">+</button>
+                <button onclick="removeItem(${i})">❌</button>
+            </div>
+        </li>`;
+    });
+
+    count.innerText = cart.length;
+}
+
+function toggleCart(){
+    document.getElementById("cart-panel").classList.toggle("open");
+}
+
+function sendToWhatsApp(){
+    let msg="Hello, I want to order:\n";
+    cart.forEach(i=>{
+        msg += `- ${i.name} (Qty: ${i.qty})\n`;
+    });
+    window.open("https://wa.me/919842817277?text="+encodeURIComponent(msg));
+}
+
+displayCart();
 </script>
 
 </body>
