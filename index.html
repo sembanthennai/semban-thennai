@@ -3,230 +3,91 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Semban Thennai | Premium Coconut Farm</title>
+<title>Semban Thennai</title>
 
 <link rel="stylesheet" href="style.css">
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-<!-- CART ICON -->
-<div class="cart-icon" onclick="toggleCart()">
-<i class="fas fa-shopping-cart"></i>
-<span id="cart-count">0</span>
-</div>
-
-<!-- CART PANEL -->
-<div class="cart-panel" id="cart-panel">
-<h3>Your Cart</h3>
-<ul id="cart-items"></ul>
-<button onclick="sendToWhatsApp()" class="btn-main">Order via WhatsApp</button>
-</div>
-
-<!-- TOP BAR -->
-<div class="top-bar">
-    <div class="container top-bar-flex">
-        <div class="top-left">
-            <a href="mailto:sembanthennai@gmail.com">
-                <i class="far fa-envelope"></i> sembanthennai@gmail.com
-            </a>
-        </div>
-        <div class="top-right">
-            <a href="https://wa.me/919842817277" target="_blank">
-                <i class="fab fa-whatsapp"></i> Chat to Order
-            </a>
-            <a href="https://instagram.com/semban_thennai" target="_blank">
-                <i class="fab fa-instagram"></i> @semban_thennai
-            </a>
-        </div>
+<!-- HEADER -->
+<header>
+    <div class="logo">
+        <img src="logo.png" alt="Semban Thennai">
+        <h1>Semban Thennai</h1>
     </div>
-</div>
 
-<!-- NAVBAR -->
-<nav class="navbar">
-    <div class="container nav-row">
-        <img src="logo.png" alt="Semban Thennai" class="nav-logo">
-
-        <ul class="nav-menu">
-            <li><a href="#about">About Us</a></li>
-            <li><a href="#products">Our Offerings</a></li>
-            <li><a href="#location">Location</a></li>
-        </ul>
-
-        <a href="https://wa.me/919842817277" class="nav-cta-btn">Order Now</a>
-    </div>
-</nav>
-
-<!-- HERO -->
-<header class="hero">
-    <div class="hero-overlay">
-        <span class="badge">TRADITIONALLY GROWN</span>
-        <h1>Pure. Natural. Rooted.</h1>
-        <p>Experience the essence of Semban Thennai.</p>
-
-        <div class="hero-btns">
-            <a href="#products" class="btn-main">View Products</a>
-        </div>
-    </div>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#products">Products</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+    </nav>
 </header>
 
-<!-- ABOUT -->
-<section id="about" class="container section">
-    <div class="about-grid">
-        <div class="about-text">
-            <span class="sub-title">Our Story</span>
-            <h2>Grown with Care at Semban Thennai</h2>
-            <div class="underline-left"></div>
-
- <p>
-Semban Thennai stands for purity, sustainability, and trust. Rooted in the fertile
-lands of Barur, our farm follows traditional agricultural practices combined with
-modern care to ensure the highest quality coconut cultivation.
-</p>
-
-<p>
-Our focus is on producing naturally grown coconuts, cold-pressed coconut oil,
-and healthy saplings without the use of harmful chemicals. Every stage of our
-process — from cultivation to harvesting — is handled with attention to quality
-and respect for nature.
-</p>
-
-<p>
-We take pride in delivering farm-fresh products directly to our customers,
-ensuring authenticity, freshness, and long-term trust. At Semban Thennai,
-we are not just growing coconuts — we are nurturing a tradition of excellence.
-</p>
-        </div>
-
-        <div class="about-stats">
-            <div class="stat-box"><h3>100%</h3><p>Natural</p></div>
-            <div class="stat-box"><h3>Farm</h3><p>Direct</p></div>
-        </div>
+<!-- HERO -->
+<section class="hero" id="home">
+    <div class="hero-content">
+        <h2>Farm Fresh Coconut Products</h2>
+        <p>Direct from our farm to your home. Natural, pure, and chemical-free.</p>
+        <a href="https://wa.me/919842817277" class="btn">Order on WhatsApp</a>
     </div>
 </section>
 
 <!-- PRODUCTS -->
-<section id="products" class="section bg-light">
-    <div class="container">
-        <div class="section-header">
-            <span class="sub-title">What We Offer</span>
-            <h2>Our Premium Selection</h2>
-            <div class="underline"></div>
+<section class="products" id="products">
+    <h2>Our Products</h2>
+
+    <div class="product-grid">
+
+        <div class="card">
+            <img src="coconut.jpg" alt="Coconut">
+            <h3>Fresh Coconuts</h3>
+            <p>High-quality farm fresh coconuts directly harvested.</p>
+            <a href="https://wa.me/919842817277?text=I want Fresh Coconuts" class="btn">Order</a>
         </div>
 
-        <div class="product-grid">
-
-            <div class="product-card">
-                <img src="oil.jpg" class="product-img">
-                <h3>Coconut Oil</h3>
-                <p>Cold pressed traditional oil.</p>
-                <button onclick="addToCart('Coconut Oil')" class="btn-main">Add to Cart</button>
-            </div>
-
-            <div class="product-card">
-                <img src="saplings.jpg" class="product-img">
-                <h3>Saplings</h3>
-                <p>Healthy coconut saplings.</p>
-                <button onclick="addToCart('Saplings')" class="btn-main">Add to Cart</button>
-            </div>
-
-            <div class="product-card">
-                <img src="coconut.jpg" class="product-img">
-                <h3>Fresh Coconuts</h3>
-                <p>Direct from farm.</p>
-                <button onclick="addToCart('Fresh Coconuts')" class="btn-main">Add to Cart</button>
-            </div>
-
+        <div class="card">
+            <img src="oil.jpg" alt="Oil">
+            <h3>Pure Coconut Oil</h3>
+            <p>Cold-pressed natural coconut oil with no additives.</p>
+            <a href="https://wa.me/919842817277?text=I want Coconut Oil" class="btn">Order</a>
         </div>
+
+        <div class="card">
+            <img src="saplings.jpg" alt="Saplings">
+            <h3>Coconut Saplings</h3>
+            <p>Healthy saplings suitable for long-term cultivation.</p>
+            <a href="https://wa.me/919842817277?text=I want Saplings" class="btn">Order</a>
+        </div>
+
     </div>
 </section>
 
-<!-- LOCATION -->
-<section id="location" class="container section">
-    <div class="location-card">
-        <i class="fas fa-map-marker-alt"></i>
-        <h3>Visit Our Farm</h3>
-        <p><strong>Semban Thennai</strong><br>Barur, Tamil Nadu</p>
+<!-- ABOUT -->
+<section class="about" id="about">
+    <h2>About Us</h2>
+    <p>
+        We are a dedicated coconut farm providing fresh coconuts, pure coconut oil, and healthy saplings directly from our land.
+        Our focus is on quality, natural farming, and delivering the best products to our customers.
+    </p>
+</section>
 
-        <a href="https://maps.app.goo.gl/BN6YttXz6fx7xy7L7" target="_blank" class="btn-main">
-            Get Directions
-        </a>
-    </div>
+<!-- CONTACT -->
+<section class="contact" id="contact">
+    <h2>Contact Us</h2>
+    <p>Order easily through WhatsApp or follow us on Instagram.</p>
+
+    <a href="https://wa.me/919842817277" class="btn">Chat on WhatsApp</a>
+    <br><br>
+    <a href="https://instagram.com/semban_thennai" class="insta">Follow on Instagram</a>
 </section>
 
 <!-- FOOTER -->
 <footer>
-    <div class="container">
-        <p class="copyright">© 2026 Semban Thennai</p>
-    </div>
+    <p>© 2026 Semban Thennai | Farm Fresh Coconut Products</p>
 </footer>
-
-<!-- SCRIPT -->
-<script>
-let cart = JSON.parse(localStorage.getItem("cart")) || [];
-
-function addToCart(name){
-    let item = cart.find(i => i.name === name);
-    if(item){ item.qty++; }
-    else{ cart.push({name, qty:1}); }
-    saveCart();
-}
-
-function changeQty(i,val){
-    cart[i].qty += val;
-    if(cart[i].qty <= 0) cart.splice(i,1);
-    saveCart();
-}
-
-function removeItem(i){
-    cart.splice(i,1);
-    saveCart();
-}
-
-function saveCart(){
-    localStorage.setItem("cart", JSON.stringify(cart));
-    displayCart();
-}
-
-function displayCart(){
-    let list = document.getElementById("cart-items");
-    let count = document.getElementById("cart-count");
-
-    list.innerHTML="";
-    cart.forEach((item,i)=>{
-        list.innerHTML += `
-        <li>
-            ${item.name}
-            <div>
-                <button onclick="changeQty(${i},-1)">-</button>
-                ${item.qty}
-                <button onclick="changeQty(${i},1)">+</button>
-                <button onclick="removeItem(${i})">❌</button>
-            </div>
-        </li>`;
-    });
-
-    count.innerText = cart.length;
-}
-
-function toggleCart(){
-    document.getElementById("cart-panel").classList.toggle("open");
-}
-
-function sendToWhatsApp(){
-    let msg="Hello, I want to order:\n";
-    cart.forEach(i=>{
-        msg += `- ${i.name} (Qty: ${i.qty})\n`;
-    });
-    window.open("https://wa.me/919842817277?text="+encodeURIComponent(msg));
-}
-
-displayCart();
-</script>
 
 </body>
 </html>
